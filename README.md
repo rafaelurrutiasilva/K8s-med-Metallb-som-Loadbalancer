@@ -37,7 +37,7 @@ Installationen utgår ifrån det som publiceras på hemsidan och fortsätter sen
 
 Om du använder kube-proxy i IPVS-läge, måste du sedan Kubernetes v1.14.2 aktivera strict ARP mode. Du kan uppnå detta genom att redigera kube-proxy-konfigurationen i det aktuella klustret.
 
-```kubectl 
+```bash 
 kubectl get configmap kube-proxy -n kube-system -o yaml \
  |sed -e "s/strictARP: false/strictARP: true/" | kubectl apply -f - -n kube-system
 ```
@@ -50,7 +50,7 @@ kubectl get configmap kube-proxy -n kube-system -o yaml \
 Detta kommer att installera MetalLB i ditt kluster, under namespace `metallb-system`.
 
 ```bash
-kubectl apply -f  [https://raw.githubusercontent.com/metallb/metallb/v0.14.8/config/manifests/metallb-native.yaml](https://raw.githubusercontent.com/metallb/metallb/v0.14.8/config/manifests/metallb-native.yaml)
+kubectl apply -f https://raw.githubusercontent.com/metallb/metallb/v0.14.8/config/manifests/metallb-native.yaml
 ```
 
 **Objekt i manifestet är:**
@@ -104,14 +104,14 @@ Vi kommer att installera två enkla applikationer som vi sedan testar både inte
 
 Detta startar en lättviktig webbserver som kommer att visa namnet på poden där den körs.
 
-```yaml
+```bash
 kubectl create deployment demo1 --image=gcr.io/google-samples/hello-app:1.0 --replicas 3
 kubectl expose deployment demo1 --type LoadBalancer --port 80 --target-port 8080
 ```
 
 ### App Demo2
 
-```yaml
+```bash
 kubectl create deployment demo2 --image=klimenta/serverip --replicas 6 --port 3000
 kubectl expose deployment demo2 --type LoadBalancer --port 80 --target-port 3000
 ```
@@ -120,7 +120,7 @@ kubectl expose deployment demo2 --type LoadBalancer --port 80 --target-port 3000
 
 Du kan köra följande flera gånger i cli eller surfa in på den URL som visas.
 
-```yaml
+```bash
 # demo1
 curl $(kubectl get svc demo1 |awk '/^demo1/  {print"http://"$4}'); \
 echo "Testa själv nu från din webbklient:"; \
