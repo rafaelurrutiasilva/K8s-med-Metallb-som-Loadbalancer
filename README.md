@@ -11,17 +11,12 @@ Att enbart följa en av dessa artiklar skulle inte ha hjälpt mig att uppnå mit
 
 Här har jag sammanställt de artiklar jag använde, tillsammans med en kort beskrivning av hur jag gick tillväga. Allt är främst skrivet för att hjälpa mitt glömska jag att komma ihåg processen – men om det kan vara till nytta för dig, så varsågod och använd det!
 
-### **Labbmiljö**
+###  Labbmiljö 
 
 Labbmiljön bestod av ett Kubernetes-kluster med tre noder, där varje nod var en virtuell maskin som körde Ubuntu 20.04. Allt detta drevs på en fristående ESXi-server, version 8.
-
+### Uppdatering
 <aside>
-💡
-
-**Uppdatering** 
-
-Det fungerade också bra med VMware Workstation 17 Pro i Windows 10. Det som krävdes var återigen att adress-poolen i LBs konfiguration inte kolliderade med vad DHCP ( i VMware Workstation) delade ut.
-
+💡 Det fungerade också bra med VMware Workstation 17 Pro i Windows 10. Det som krävdes var återigen att adress-poolen i LBs konfiguration inte kolliderade med vad DHCP ( i VMware Workstation) delade ut.
 </aside>
 
 ### Referenser
