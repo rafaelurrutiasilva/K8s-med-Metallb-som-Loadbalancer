@@ -142,8 +142,9 @@ echo $(kubectl get svc demo2 |awk '/^demo2/  {print"http://"$4}')
 Vill du testa med loop i cli? Använd detta exempelvis.
 
 ```bash
-for i in {1..5}; do curl $(kubectl get svc demo1|awk '/^demo1/ {print"http://"$4}') ;\
-echo "" ;\
+for i in {1..5}
+do
+ curl $(kubectl get svc demo1 |awk '/^demo1/ {print"http://"$4}') ; echo "" 
 done
 ```
 
