@@ -151,9 +151,9 @@ done
 
 Detta kan göras på flera olika sätt, men gemensamt för alla är användningen av CLI-kommandona `kubectl delete service` och `kubectl delete deployment`.
 
-```yaml
+```bash
 for I in service/demo1 deployment.apps/demo1 service/demo2 deployment.apps/demo2 
 do 
-	kubectl delete $I
+   kubectl delete $I
 done
 ```
