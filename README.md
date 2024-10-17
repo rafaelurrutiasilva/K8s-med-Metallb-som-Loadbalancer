@@ -62,7 +62,7 @@ kubectl apply -f  [https://raw.githubusercontent.com/metallb/metallb/v0.14.8/con
 
 - `metallb-system/controller` deployment. Detta är den klusterövergripande kontrollenheten som hanterar IP-adresstilldelningar.
 - `metallb-system/speaker` daemonset. Detta är komponenten som använder det/de protokoll du väljer för att göra tjänsterna nåbara.
-- Servicekonton för controller och speaker, tillsammans med de RBAC-behörigheter som komponenterna behöver för att fungera.
+- Servicekonton för controller och speaker, tillsammans med de RBAC-behörigheter som komponenterna har behövs för att fungera.
 
 > Installationsmanifestet inkluderar inte någon konfigurationsfil. MetalLB komponenter kommer att starta, men förblir inaktiva tills du börjar distribuera resurser.
 > 
