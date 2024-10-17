@@ -42,7 +42,7 @@ Installationen utgår ifrån det som publiceras på hemsidan och fortsätter sen
 
 Om du använder kube-proxy i IPVS-läge, måste du sedan Kubernetes v1.14.2 aktivera strict ARP mode. Du kan uppnå detta genom att redigera kube-proxy-konfigurationen i det aktuella klustret.
 
-```bash
+```kubectl 
 kubectl get configmap kube-proxy -n kube-system -o yaml \
  |sed -e "s/strictARP: false/strictARP: true/" | kubectl apply -f - -n kube-system
 ```
