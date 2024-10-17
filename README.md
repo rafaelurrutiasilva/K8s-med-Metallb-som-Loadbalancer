@@ -26,7 +26,7 @@ Det fungerade ocks√• bra med VMware Workstation 17 Pro i Windows 10. Det som kr√
 
 ### Referenser
 
- ****https://metallb.universe.tf/installation
+ https://metallb.universe.tf/installation
 
 https://blog.andreev.it/2023/10/install-metallb-on-kubernetes-cluster-running-on-vmware-vms-or-bare-metal-server
 
