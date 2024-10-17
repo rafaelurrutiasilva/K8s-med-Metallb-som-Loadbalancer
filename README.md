@@ -1,5 +1,4 @@
-# K8s med Metallb som Loadbalancer
-
+# Kubernetes kluster med Metallb som Lastbalanserare
 ## Introduktion
 
 ### Bakgrund
