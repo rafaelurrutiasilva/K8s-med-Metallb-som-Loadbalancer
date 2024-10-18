@@ -18,7 +18,9 @@ The lab environment consisted of a Kubernetes cluster with three nodes, where ea
 
 ### References
 https://metallb.universe.tf/installation
+
 https://blog.andreev.it/2023/10/install-metallb-on-kubernetes-cluster-running-on-vmware-vms-or-bare-metal-server
+
 https://akyriako.medium.com/load-balancing-with-metallb-in-bare-metal-kubernetes-271aab751fb8
 
 # Tutorial
@@ -29,7 +31,6 @@ The installation starts with what is published on the official website and then 
 If you are using kube-proxy in IPVS mode, you need to enable strict ARP mode starting from Kubernetes v1.14.2. You can achieve this by editing the kube-proxy configuration in the current cluster.
 
 ```bash
-Copy code
 kubectl get configmap kube-proxy -n kube-system -o yaml \
  |sed -e "s/strictARP: false/strictARP: true/" | kubectl apply -f - -n kube-system
 ```
@@ -40,7 +41,6 @@ kubectl get configmap kube-proxy -n kube-system -o yaml \
 This will install MetalLB in your cluster, under the namespace metallb-system.
 
 ```bash
-Copy code
 kubectl apply -f https://raw.githubusercontent.com/metallb/metallb/v0.14.8/config/manifests/metallb-native.yaml
 ```
 **Objects in the manifest include:**
@@ -54,7 +54,6 @@ kubectl apply -f https://raw.githubusercontent.com/metallb/metallb/v0.14.8/confi
 ### Checking the Status of MetalLB Core Objects
 You can verify that the different objects from the manifest are running without errors.
 ```bash
-Copy code
 kubectl -n metallb-system get pods
 kubectl -n metallb-system get all
 ```
@@ -62,7 +61,6 @@ kubectl -n metallb-system get all
 Configuring the LoadBalancer
 Now we can proceed to configure an address pool for our load balancer. You should use an address range that fits your environment. The range must be reserved and not used by the DHCP in your network.
 ```yaml
-Copy code
 apiVersion: metallb.io/v1beta1
 kind: IPAddressPool
 metadata:
