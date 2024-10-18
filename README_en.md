@@ -1,4 +1,4 @@
-### [🇸🇪 Svenska](README.md) / [🇬🇧 English](README_en.md)
+[🇸🇪 Svenska](README.md) / [🇬🇧 English](README_en.md)
 
 # Kubernetes Cluster with MetalLB as LoadBalancer
 ## Introduction
