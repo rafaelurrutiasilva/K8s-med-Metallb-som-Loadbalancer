@@ -1,3 +1,5 @@
+# [🇸🇪 Svenska](README.md) / [🇬🇧 English](README_en.md)
+
 # Kubernetes kluster med Metallb som Lastbalanserare
 ## Introduktion
 
